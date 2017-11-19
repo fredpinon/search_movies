@@ -9,7 +9,7 @@ class Search extends Component {
     if (query.length > 1) debouncedSearch(query, this.props.triggerSearch);
     else {
       this.props.clearSearch();
-      setTimeout(() => this.props.clearSearch(), 300);
+      setTimeout(() => this.props.clearSearch(), 500);
     }
   }
 

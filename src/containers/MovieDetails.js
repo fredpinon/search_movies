@@ -35,8 +35,10 @@ class MovieDetails extends Component {
   renderGenres = () => {
     const { genre_ids } = this.props.navigation.state.params.movie;
     let genres = genre_ids.reduce((accum,id) => {
-      accum += `${this.props.genres[id].name}, `;
-      return accum;
+      if (this.props.genres && this.props.genres[id]) {
+        accum += `${this.props.genres[id].name}, `;
+        return accum;
+      } else return accum;
     }, '');
     return genres.substring(0, genres.length-2);
   }
